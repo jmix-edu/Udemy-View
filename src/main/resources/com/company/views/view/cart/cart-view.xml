@@ -4,7 +4,7 @@
     <data>
         <collection id="productsDc" class="com.company.views.entity.Product">
             <fetchPlan extends="_base"/>
-            <loader id="productsDl" readOnly="true">
+            <loader id="productsDl">
                 <query>
                     <![CDATA[select e from Product e]]>
                 </query>
@@ -15,12 +15,14 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <dataGrid id="productsDataGrid" dataContainer="productsDc" minWidth="100px" width="100%" maxHeight="50%">
+        <vbox width="100%">
+        <dataGrid id="productsDataGrid" dataContainer="productsDc" minWidth="100px" width="100%">
             <actions/>
             <columns>
                 <column property="name"/>
                 <column property="price"/>
             </columns>
         </dataGrid>
+        </vbox>
     </layout>
 </view>
